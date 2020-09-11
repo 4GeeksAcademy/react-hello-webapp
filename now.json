@@ -1,4 +1,3 @@
-
 {
   "version": 2,
   "builds": [
@@ -8,8 +7,13 @@
       "config": { "distDir": "public" }
     }
   ],
-
+  
   "routes": [
+    {
+      "src":"/.*bundle.js$",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest":"/bundle.js"
+    },
     {
       "src":"/(.+)\\.([a-zA-Z]{2,4})$",
       "headers": { "cache-control": "s-maxage=31536000,immutable" },

@@ -77,11 +77,17 @@ const MyComponentSuper = () => {
 
 ## Publish your website!
 
-1. **ZEIT:** The FREE recomended hosting provider is [http://zeit.co/](http://zeit.co/), you can deploy in 1 minutes by typing the following command:
+1. **Vercel:** The FREE recomended hosting provider is [vercel.com](https://vercel.com/), you can deploy in 1 minutes by typing the following 2 commands:
+
+Login (you need to have an account):
 ```sh
-$ npm i now -g && now
+$ npm i vercel -g && vercel login
 ```
-✎ Note: If you get asked for credentials you have to type `$ now` after login in.
+Deploy:
+```sh
+$ vercel --prod
+```
+✎ Note: If you don't have an account just go to vercel.com, create a account and come back here.
 
 ![Zeit example procedure to deploy](https://ucarecdn.com/4041f971-8dd9-4dc2-84fb-4645ab42c856/)
 

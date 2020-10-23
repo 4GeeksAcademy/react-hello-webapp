@@ -3,6 +3,8 @@ ports:
       onOpen: open-browser
 tasks:
     - init: >
-        npm i now -g &&
+        npm i vercel -g &&
         npm install &&
         cp .env.example .env
+      command: >
+        npm i vercel -g

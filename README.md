@@ -89,7 +89,7 @@ $ vercel --prod
 ```
 ✎ Note: If you don't have an account just go to vercel.com, create a account and come back here.
 
-![Zeit example procedure to deploy](https://ucarecdn.com/4041f971-8dd9-4dc2-84fb-4645ab42c856/)
+![Vercel example procedure to deploy](https://github.com/4GeeksAcademy/react-hello-webapp/blob/4b530ba091a981d3916cc6e960e370decaf2e234/docs/deploy.png?raw=true)
 
 2. **Github Pages:** This boilerplate is 100% compatible with the free github pages hosting.
 To publish your website you need to push your code to your github repository and run the following command after:

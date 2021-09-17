@@ -8,3 +8,4 @@ tasks:
         cp .env.example .env
       command: >
         npm i vercel -g
+        python docs/assets/greeting.py

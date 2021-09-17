@@ -7,5 +7,5 @@ tasks:
         npm install &&
         cp .env.example .env
       command: >
-        npm i vercel -g
+        npm i vercel -g &&
         python docs/assets/greeting.py

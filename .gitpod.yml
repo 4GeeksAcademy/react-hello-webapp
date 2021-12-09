@@ -3,11 +3,9 @@ ports:
       onOpen: open-browser
 tasks:
     - init: >
-        nvm install 14 &&
         npm i vercel -g &&
         npm install &&
         cp .env.example .env
       command: >
-        nvm install 14 &&
         npm i vercel -g &&
         python docs/assets/greeting.py

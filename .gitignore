@@ -56,6 +56,8 @@ public/
 
 # ignore the dist directory were our bundle files are going to be
 !.gitkeep
+!.devcontainer
+!.devcontainer/*
 !.gitpod.yml
 !.htaccess
 !.eslintrc

@@ -9,6 +9,9 @@ if(process.env.GITPOD_WORKSPACE_URL){
   const [schema, host] = process.env.GITPOD_WORKSPACE_URL.split('://');
   publicUrl = `wss://${port}-${host}/ws`;
 }
+if(process.env.CODESPACE_NAME){
+  publicUrl = `wss://${process.env.CODESPACE_NAME}-${port}.preview.app.github.dev/ws`;
+}
 
 module.exports = merge(common, {
     mode: 'development',

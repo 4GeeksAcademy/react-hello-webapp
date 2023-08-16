@@ -7,7 +7,7 @@ export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="jumbotron">
+		<div className="container p-5 mb-4 bg-light rounded-3">
 			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
 
 			<hr className="my-4" />

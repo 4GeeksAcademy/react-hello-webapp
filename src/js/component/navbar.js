@@ -1,17 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import agenda from "./agenda.png";
 
-export const Navbar = () => {
-	return (
-		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
-				</Link>
-			</div>
-		</nav>
-	);
+const Navbar = () => {
+  return (
+    <div className="container">
+      <nav className="navbar navbar-light bg-light mb-3">
+        <Link to="/">
+          <img
+            src={agenda}
+            className="img-fluid rounded-start m-3"
+            style={{ maxWidth: "40px" }}
+            alt="..."
+          />
+        </Link>
+        <h1>Tus Contactos</h1>
+        <div className="ml-auto">
+          <Link to="/formulario">
+            <button className="btn btn-primary">
+              Agrega un nuevo contacto
+            </button>
+          </Link>
+        </div>
+      </nav>
+    </div>
+  );
 };
+
+export default Navbar;

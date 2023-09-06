@@ -1,45 +1,51 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, setStore }) => {
 	return {
-		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+	  store: {
+		formulario: [],
+	  },
+	  actions: {
+		addCard: (newCardData) => {
+		  const store = getStore();
+		  const newCard = {
+			cardData: {
+			  fullName: newCardData.fullName,
+			  email: newCardData.email,
+			  phone: newCardData.phone,
+			  address: newCardData.address,
+			},
+		  };
+		  setStore({ formulario: [...store.formulario, newCard] });
 		},
-		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+  
+		deleteCard: (index) => {
+		  const store = getStore();
+		  const updatedFormulario = store.formulario.filter(
+			(item, i) => i !== index
+		  );
+		  setStore({ formulario: updatedFormulario });
+		},
+  
+		editCard: (index, updatedCardData) => {
+		  const store = getStore();
+		  const updatedFormulario = store.formulario.map((item, i) => {
+			if (i === index) {
+			  return {
+				cardData: {
+				  fullName: updatedCardData.fullName,
+				  email: updatedCardData.email,
+				  phone: updatedCardData.phone,
+				  address: updatedCardData.address,
+				},
+			  };
+			} else {
+			  return item;
 			}
-		}
+		  });
+		  setStore({ formulario: updatedFormulario });
+		},
+	  },
 	};
-};
-
-export default getState;
+  };
+  
+  export default getState;
+  

@@ -1,37 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
-import injectContext from "./store/appContext";
-
-import { Navbar } from "./component/navbar";
+import { Personajes } from "./views/personajes";
+import { Planeta } from "./views/planeta";
+import { Vehiculos } from "./views/vehiculos";
+import { AppProvider } from "./store/appContext";
 import { Footer } from "./component/footer";
+import "./component/styles/index.css";
 
-//create your first component
 const Layout = () => {
-	//the basename is used when your project is published in a subdirectory and not in the root of the domain
-	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-	const basename = process.env.BASENAME || "";
+  useEffect(() => {
+    // Aquí puedes realizar cualquier lógica o efectos que necesites al cargar el componente
+    // Si anteriormente estabas utilizando el contexto para obtener el estado global,
+    // puedes considerar otras opciones, como utilizar React Redux u otros patrones de manejo de estado.
+  }, []);
 
-	return (
-		<div>
-			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
-			</BrowserRouter>
-		</div>
-	);
+  return (
+    <div>
+      <BrowserRouter>
+        <ScrollToTop>
+          <AppProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/personajes/:theid" element={<Personajes />} />
+              <Route path="/planeta/:theid" element={<Planeta />} />
+              <Route path="/vehiculos/:theid" element={<Vehiculos />} />
+            </Routes>
+          </AppProvider>
+        </ScrollToTop>
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 };
 
-export default injectContext(Layout);
+export default Layout;

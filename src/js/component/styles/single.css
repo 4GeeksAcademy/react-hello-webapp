@@ -1,0 +1,18 @@
+.btnsingle {
+    background-color: rgb(5, 223, 252);
+    margin: 0;
+    border-radius: 30px;
+    width: 155px;
+    height: 40px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+}
+.btnsingle:hover {
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.card-body-single {
+    color: white;
+}

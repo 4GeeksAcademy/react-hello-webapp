@@ -1,0 +1,82 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-bottom: 1px solid rgb(142, 140, 140);
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 130px;
+    margin-left: 90px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+}
+
+.logo:hover {
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.btndrop {
+    background-color: rgb(5, 223, 252);
+    border-radius: 30px;
+    margin-right: 90px;
+    width: 150px;
+    height: 40px;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif;
+    transition: box-shadow 0.2s ease;
+    box-shadow: 0 0 0 transparent;
+}
+
+.btndrop:hover {
+    box-shadow: 2px 2px 20px rgb(255, 255, 255);
+}
+
+.dropdown-menu {
+    background-color: rgb(5, 223, 252);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    transition: box-shadow 0.3s ease;
+}
+
+.dropdown-menu:hover {
+    box-shadow: 0 0 10px rgb(1, 26, 138);
+}
+
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.favorite-item:hover {
+    box-shadow: 0 0 10px #040404;
+}
+
+.btn-delete {
+    background: transparent;
+    border: 1px solid rgb(5, 0, 1);
+    cursor: pointer;
+    color: rgb(3, 8, 37);
+}
+
+.btn-delete:hover {
+    box-shadow: 0 0 10px #040404;
+}
+
+.main-content {
+    margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-evenly;
+    }
+
+    .spacer {
+        flex: 1;
+    }
+}

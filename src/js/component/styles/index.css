@@ -1,0 +1,23 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: rgb(6, 6, 6);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    box-shadow: 0px 0px 8px rgb(5, 223, 252);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000000; /* Color del fondo del scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(5, 223, 252); /* Color del thumb (la barra de desplazamiento en sí) */
+    border-radius: 10px; /* Borde redondeado del thumb */
+    box-shadow: 0px 0px 8px rgb(1, 26, 138);
+}

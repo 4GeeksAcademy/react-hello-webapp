@@ -1,5 +1,6 @@
 # ignore all files starting with .
 .*
+# Note! to deploy this project later on (e.g. vercel.com) you will need to remove the '.*' from the above line. 
 
 # track this file .gitignore (i.e. do NOT ignore it)
 !.gitignore

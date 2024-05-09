@@ -3,10 +3,9 @@ ports:
       onOpen: open-browser
 tasks:
     - init: >
-        npm install &&
-        cp .env.example .env
-      command: >
-        python docs/assets/greeting.py
+        npm ci &&
+        cp .env.example .env &&
+        npm run dev
 
 vscode:
   extensions:

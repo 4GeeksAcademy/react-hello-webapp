@@ -35,6 +35,7 @@ This template comes with a centralized & general state that's shared with all pa
 
 The file `./src/store.js` has a default structure for the store, we encourage you to change it and adapt it to your data needs (for example, if you are doing a `Todo list` you will probably have a array of todos here).
 
++ Learn [how the useReducer works](https://4geeks.com/lesson/optimize-react-components-usereducer).
 + Read more about [implementing a global state with Context API](https://4geeks.com/lesson/context-api)
 + Read more about [react hooks](https://content.breatheco.de/lesson/react-hooks-explained)
 

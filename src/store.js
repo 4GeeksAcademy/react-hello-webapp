@@ -1,16 +1,16 @@
 export const initialStore=()=>{
   return{
     message: null,
-    demo: [
+    todos: [
       {
-        title: "FIRST",
-        background: "white",
-        initial: "white"
+        id: 1,
+        title: "Make the bed",
+        background: null,
       },
       {
-        title: "SECOND",
-        background: "white",
-        initial: "white"
+        id: 2,
+        title: "Do my homework",
+        background: null,
       }
     ]
   }
@@ -19,9 +19,12 @@ export const initialStore=()=>{
 export default function storeReducer(store, action = {}) {
   switch(action.type){
     case 'change_color':
+
+      const { id,  color } = action.payload
+
       return {
         ...store,
-        demo: action.nextDemo
+        todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
       };
     default:
       throw Error('Unknown action.');

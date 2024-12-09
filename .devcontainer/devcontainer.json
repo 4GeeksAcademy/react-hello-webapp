@@ -38,4 +38,5 @@
 		3000
 	],
 	"onCreateCommand": "npm ci && (cp .env.example .env || echo \".env creation failed\")",
+	"postCreateCommand": "npm install -g pnpm"
 }

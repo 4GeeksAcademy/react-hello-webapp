@@ -2,8 +2,6 @@
 
 > 🎥 Esta plantilla [cuenta con un video tutorial](https://youtu.be/9blWKQTJ1FA), para verlo haz clic aquí.
 
-> 🎥 Esta plantilla [cuenta con un video tutorial](https://youtu.be/oGpSVBsq7BA), para verlo haz clic aquí.
-
 Utilizada por [4Geeks.com](https://4geeks.com/) y los estudiantes de [4Geeks Academy](https://4geeksacademy.com/), esta plantilla ayuda a iniciar tus primeras aplicaciones web multi-página integrándose con la última versión de React, React-Router, despliegues en Vercel y Vite para el empaquetado.
 
 ### Empezando:

@@ -5,7 +5,7 @@ Used by 4Geeks.com and 4Geeks Academy students, this template helps to bootstrap
 
 ### Getting stated:
 
-> 📦 Make sure you are using at least node version 18.
+> 📦 Make sure you are using at least node version 20.
 
 1. Install the node package dependencies by typing: `$ npm install`
 

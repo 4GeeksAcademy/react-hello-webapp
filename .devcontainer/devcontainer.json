@@ -1,8 +1,8 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/postgres
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
 	"name": "React + Vite",
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.10",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
 	"customizations": {
 		"extensions": [
 			"vscode-eslint",

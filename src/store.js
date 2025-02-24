@@ -1,7 +1,7 @@
 export const initialStore = () => {
   return {
 
-    "contacts": [
+    contacts: [
       {
         "name": "",
         "phone": "",
@@ -17,30 +17,32 @@ export const initialStore = () => {
 export default function storeReducer(store, action = {}) {
   switch (action.type) {
 
-    case 'añadirContacto':
+    case "addContact":
       return {
-        ...store, agendas: action.payload
-      };
-
-    case 'editarContacto':
-      return {
-
         ...store,
-        contacts: store.contacts.map(contact =>
-          contact.id === action.payload.id ? action.payload :
-            contact.name
-        )
+        contacts: action.payload
       };
 
-    case 'eliminarContacto':
+    case "editcontact":
+      return {
+        ...store,
+        contacts: [...store.contacts, action.payload]
+      };
+
+    case "deleteContact":
 
       return {
         ...store,
-        contacts: store.contact.filter(contact => contact.id !== action.payload)
+        contacts: store.contacts.filter(contact => contact.id !== action.payload)
       };
 
-    default:
-      throw new Error("Unknow Action.");
+   
+
+  default: return store;
 
   }
+
+   
 }
+
+ 

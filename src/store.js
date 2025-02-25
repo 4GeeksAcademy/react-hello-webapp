@@ -1,3 +1,5 @@
+
+
 export const initialStore = () => {
   return {
 
@@ -8,16 +10,17 @@ export const initialStore = () => {
         "email": "",
         "address": "",
         "id": 0
-      }
-    ]
-  }
-}
+      },
+    ],
+    userRole:""
+  };
+};
 
-
-export default function storeReducer(store, action = {}) {
+export default function storeReducer(store, action) {
   switch (action.type) {
 
-    case "addContact":
+    
+    case "setContacts":
       return {
         ...store,
         contacts: action.payload
@@ -36,8 +39,8 @@ export default function storeReducer(store, action = {}) {
         contacts: store.contacts.filter(contact => contact.id !== action.payload)
       };
 
+    
    
-
   default: return store;
 
   }

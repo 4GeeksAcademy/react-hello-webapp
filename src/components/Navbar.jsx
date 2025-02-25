@@ -1,19 +1,37 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+function Navbar() {
+	const navigate = useNavigate();
+
+	const goHome =() => {
+		navigate('/');
+	};
+	const goBack = () => {
+		navigate(-1);
+	};
+
 
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
+		<nav className="navbar navbar-light bg-black">
+			<ul className="cnav-links">
+				<li>
+					<Link to="/contact_list">Lista de contactos</Link>
+				</li>
+				
+				<li>
+					<Link to="/">Acerca de</Link>
+				</li>
+				
+				<li>
+					<Link to="/">Contacto</Link>
+				</li>
+				
+				</ul>
+				
 		</nav>
 	);
 };
+
+export default Navbar;

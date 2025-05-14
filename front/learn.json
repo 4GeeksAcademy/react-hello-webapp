@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "React.js Starter Template for web applications",
+    "es": "Plantilla Inicial para crear applicaciones semi-senior con React"
+  },
+  "description": {
+    "en": "This is a starter template for legit React.js projects. It includes a basic folder structure, a sample component, styles and other usual configurations to quicly kickstart your project.",
+    "es": "Este es una plantilla inicial para proyectos de React.js. Incluye una estructura básica de carpetas, un componente de ejemplo, estilos y otras configuraciones habituales para iniciar rápidamente tu proyecto."
+  },
+  "repository": "https://github.com/4geeksacademy/react-hello-webapp",
+  "preview": "",
+  "projectType": "template",
+  "difficulty": "beginner",
+  "technologies": ["React.js", "Javascript", "Vite"]
+}

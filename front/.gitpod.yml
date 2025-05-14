@@ -1,0 +1,12 @@
+ports:
+    - port: 3000
+      onOpen: open-browser
+tasks:
+    - init: >
+        npm ci &&
+        cp .env.example .env &&
+        npm run dev
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode

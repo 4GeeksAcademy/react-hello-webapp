@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
@@ -18,7 +17,13 @@ export const Navbar = () => {
                     <Link className="btn btn-outline-secondary position-relative" to="/carrito">
                         <i className="bi bi-cart-fill fs-5"></i>
                     </Link>
-                    <Link className="btn btn-primary" to="/login">Inicio</Link>
+                    <Link className="btn btn-primary" to="/login">
+                        Inicia sesión
+                    </Link>
+                    <Link className="btn btn-outline-dark" to="/register">
+                        Regístrate
+                    </Link>
+
                 </div>
             </div>
         </nav>

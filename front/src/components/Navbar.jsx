@@ -12,6 +12,8 @@ export const Navbar = () => {
 
                 {/* Botones a la derecha */}
                 <div className="d-flex ms-auto align-items-center gap-3">
+                    <Link className="btn btn-outline-primary" to="/men">Hombre</Link>
+                    <Link className="btn btn-outline-primary" to="/women">Mujer</Link>
                     <Link className="btn btn-outline-primary" to="/servicio">Servicio</Link>
                     <Link className="btn btn-outline-primary" to="/producto">Producto</Link>
                     <Link className="btn btn-outline-secondary position-relative" to="/carrito">

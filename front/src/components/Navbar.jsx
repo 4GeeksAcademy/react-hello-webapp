@@ -5,7 +5,7 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-lg navbar-light bg-warning w-100 px-3">
             <div className="container-fluid">
                 {/* Logo a la izquierda */}
-                <Link className="navbar-brand d-flex align-items-center" to="/home">
+                <Link className="navbar-brand d-flex align-items-center" to="/">
                     <i className="bi bi-box-seam fs-4 me-2"></i> {/* Ícono como logo */}
                     <span className="fw-bold">MiApp</span>
                 </Link>

@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Men from "./pages/Men"
 import Women from "./pages/Women"
+import { Service } from "./pages/Service";
 
 
 export const router = createBrowserRouter(
@@ -24,6 +25,7 @@ export const router = createBrowserRouter(
         <Route path="sobre-nosotros" element={<SobreNosotros />} />
         <Route path="men" element={<Men />} />
         <Route path="women" element={<Women />} />
+        <Route path="service" element={<Service />} />
       </Route>
     )
 );

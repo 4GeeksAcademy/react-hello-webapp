@@ -14,7 +14,7 @@ export const Navbar = () => {
                 <div className="d-flex ms-auto align-items-center gap-3">
                     <Link className="btn btn-outline-primary" to="/men">Hombre</Link>
                     <Link className="btn btn-outline-primary" to="/women">Mujer</Link>
-                    <Link className="btn btn-outline-primary" to="/servicio">Servicio</Link>
+                    <Link className="btn btn-outline-primary" to="/service">Servicio</Link>
                     <Link className="btn btn-outline-primary" to="/producto">Producto</Link>
                     <Link className="btn btn-outline-secondary position-relative" to="/carrito">
                         <i className="bi bi-cart-fill fs-5"></i>

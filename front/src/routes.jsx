@@ -9,6 +9,9 @@ import { Contacto } from "./pages/Contacto";
 import { SobreNosotros } from "./pages/SobreNosotros";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Men from "./pages/Men"
+import Women from "./pages/Women"
+
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -19,6 +22,8 @@ export const router = createBrowserRouter(
         <Route path="register" element={<Register />} />
         <Route path="contacto" element={<Contacto />} />
         <Route path="sobre-nosotros" element={<SobreNosotros />} />
+        <Route path="men" element={<Men />} />
+        <Route path="women" element={<Women />} />
       </Route>
     )
 );

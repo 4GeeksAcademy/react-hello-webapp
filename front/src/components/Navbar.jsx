@@ -16,6 +16,7 @@ export const Navbar = () => {
                     <Link className="btn btn-outline-primary" to="/women">Mujer</Link>
                     <Link className="btn btn-outline-primary" to="/service">Servicio</Link>
                     <Link className="btn btn-outline-primary" to="/producto">Producto</Link>
+                     <Link className="btn btn-outline-success" to="/productos">Productos</Link> 
                     <Link className="btn btn-outline-secondary position-relative" to="/carrito">
                         <i className="bi bi-cart-fill fs-5"></i>
                     </Link>

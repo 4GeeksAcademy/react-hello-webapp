@@ -27,7 +27,7 @@ export default function Cart() {
               </div>
               <button
                 onClick={() => dispatch({ type: "eliminar_del_carrito", payload: item.id })}
-                className="bg-red-500 text-white px-3 py-1 rounded"
+                className="bg-danger text-white px-3 py-1 rounded"
               >
                 Eliminar
               </button>
@@ -37,7 +37,7 @@ export default function Cart() {
       )}
 
       <div className="mt-4 text-right font-bold text-lg">
-        Total: {total.toFixed(2)} €
+        Total: <strong>{total.toFixed(2)} €</strong>
       </div>
     </div>
   );

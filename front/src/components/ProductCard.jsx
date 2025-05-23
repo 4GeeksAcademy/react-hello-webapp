@@ -1,35 +1,35 @@
 // src/components/ProductCard.jsx
-import useGlobalReducer from "../hooks/useGlobalReducer";
+import { Link } from "react-router-dom";
+import useGlobalReducer from "../hooks/useGlobalReducer"; // o la ruta correcta
 
 export default function ProductCard({ producto }) {
   const { dispatch } = useGlobalReducer();
 
+  const agregarAlCarrito = () => {
+    dispatch({ type: 'agregar_al_carrito', payload: producto });
+  };
+
   return (
-    <div className="bg-white rounded shadow p-4">
-      <img src={producto.imagen} alt={producto.nombre} className="w-full h-48 object-cover rounded" />
-      <h3 className="font-bold text-lg mt-2">{producto.nombre}</h3>
-      <p>{producto.descripcion}</p>
-      <p className="font-semibold">{producto.precio.toFixed(2)} €</p>
-
-      <div className="flex gap-2 mt-2">
-        <button
-          className="bg-green-500 text-white px-2 py-1 rounded"
-          onClick={() =>
-            dispatch({ type: "agregar_al_carrito", payload: producto })
-          }
-        >
-          Agregar al carrito
-        </button>
-
-        <button
-          className="bg-red-500 text-white px-2 py-1 rounded"
-          onClick={() =>
-            dispatch({ type: "eliminar_del_carrito", payload: producto.id })
-          }
-        >
-          Eliminar del carrito
-        </button>
+    <div className="card h-100">
+      <img
+        src={producto.imagen}
+        className="card-img-top"
+        alt={producto.nombre}
+        style={{ objectFit: "cover", height: "150px" }}
+      />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{producto.nombre}</h5>
+        <p className="card-text">Precio: €{producto.precio.toFixed(2)}</p>
+        <div className="mt-auto d-flex justify-content-between">
+          <button className="btn btn-primary btn-sm" onClick={agregarAlCarrito}>
+            Añadir al carrito
+          </button>
+          <Link to={`/producto/${producto.id}`} className="btn btn-outline-secondary btn-sm">
+            Detalle
+          </Link>
+        </div>
       </div>
     </div>
   );
 }
+

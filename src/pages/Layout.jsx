@@ -1,27 +1,16 @@
-import React, { useContext, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Home.jsx";
-import Single from "./Single.jsx";
-import Navbar from "../components/Navbar.jsx";
-import { Context } from "../store.jsx";
+import { Outlet } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
+// Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 const Layout = () => {
-    const { actions } = useContext(Context);
-
-    // Cargar la data solo una vez
-    useEffect(() => {
-        actions.loadData();
-    }, []);
-
     return (
-        <BrowserRouter>
+        <ScrollToTop>
             <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/details/:type/:uid" element={<Single />} />
-                <Route path="*" element={<h1>Not found!</h1>} />
-            </Routes>
-        </BrowserRouter>
+            <Outlet />
+            <Footer />
+        </ScrollToTop>
     );
 };
 

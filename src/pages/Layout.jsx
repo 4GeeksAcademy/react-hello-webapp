@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home.jsx";
 import Single from "./Single.jsx";
 import Navbar from "../components/Navbar.jsx";
-import { Context } from "../store.js";
+import { Context } from "../store.jsx";
 
 const Layout = () => {
     const { actions } = useContext(Context);

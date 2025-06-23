@@ -3,40 +3,44 @@ import { Link } from "react-router-dom";
 import { Context } from "../store.jsx";
 
 const CardItem = ({ item, type }) => {
-    // Construimos la URL de la imagen según el tipo y uid del item
-    const imageURL = `https://starwars-visualguide.com/assets/img/${type === "people" ? "characters" : type}/${item.uid}.jpg`;
+  const { actions, store } = useContext(Context);
 
-    // Acceso a las acciones desde el contexto (por ejemplo para favoritos)
-    const { actions } = useContext(Context);
+  const isFavorite = store.favorites.some(fav => fav.uid === item.uid && fav.type === type);
 
-    return (
-        <div className="card" style={{ width: "18rem" }}>
-            <img
-                src={imageURL}
-                className="card-img-top"
-                alt={item.name}
-                // Si la imagen no carga, usamos un placeholder genérico
-                onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
-                }}
-            />
-            <div className="card-body">
-                <h5 className="card-title">{item.name}</h5>
-                <div className="d-flex justify-content-between">
-                    <Link to={`/details/${type}/${item.uid}`} className="btn btn-outline-primary">
-                        Learn more
-                    </Link>
-                    <button
-                        className="btn btn-outline-warning"
-                        onClick={() => actions.addFavorite({ uid: item.uid, name: item.name, type })}
-                    >
-                        ❤️
-                    </button>
-                </div>
-            </div>
+  // URL imagen basada en starwars-visualguide.com
+  const imageURL = `https://starwars-visualguide.com/assets/img/${type === "people" ? "characters" : type}/${item.uid}.jpg`;
+
+  return (
+    <div className="card h-100 shadow-sm">
+      <img
+        src={imageURL}
+        className="card-img-top"
+        alt={item.name}
+        onError={(e) => e.target.src = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg"}
+      />
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{item.name}</h5>
+        <div className="mt-auto d-flex justify-content-between align-items-center">
+          <Link to={`/single/${type}/${item.uid}`} className="btn btn-primary btn-sm">
+            Learn More
+          </Link>
+          <button
+            className={`btn btn-sm ${isFavorite ? "btn-danger" : "btn-outline-warning"}`}
+            onClick={() => {
+              if (isFavorite) {
+                actions.removeFavorite(item.uid, type);
+              } else {
+                actions.addFavorite({ ...item, type });
+              }
+            }}
+          >
+            {isFavorite ? "Remove Favorite" : "Add Favorite"}
+          </button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default CardItem;
+

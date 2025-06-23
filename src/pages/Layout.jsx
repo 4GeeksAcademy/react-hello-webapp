@@ -1,17 +1,18 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
-import ScrollToTop from "../components/ScrollToTop";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
-// Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 const Layout = () => {
-    return (
-        <ScrollToTop>
-            <Navbar />
-            <Outlet />
-            <Footer />
-        </ScrollToTop>
-    );
+  return (
+    <>
+      <Navbar />
+      <div style={{ minHeight: "80vh" }}>
+        <Outlet />
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;
